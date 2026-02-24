@@ -1,0 +1,39 @@
+---
+config:
+  layout: elk
+---
+classDiagram
+direction TB
+    class Buca {
+	    -boolean isOccupata
+	    -Talpa talpa
+    }
+
+    class Talpa {
+	    -int durataUscita
+	    -int punteggio
+	    -boolean isVisibile
+	    +appari()
+	    +scompari()
+    }
+
+    class Gestore {
+	    -int punteggio
+	    -int tempo
+	    +avviaGioco()
+	    +terminaGioco()
+	    +colpisciBuca()
+	    +aumentaPunteggio()
+    }
+
+    class Interfaccia {
+    }
+
+    class Giocatore {
+	    +colpisciBuca()
+    }
+
+    Gestore "1" --o "1...n" Buca
+    Gestore --o Talpa
+    Gestore -- Interfaccia
+    Gestore -- Giocatore
