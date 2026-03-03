@@ -13,5 +13,23 @@ import java.util.Timer;
 public class Talpa {
     private boolean isVisible;
     private int value;
-    private Timer timer;
+    private int timer;
+
+    public Talpa(boolean isVisible, int value, int timer) {
+        this.isVisible = isVisible;
+        this.value = value;
+        this.timer = timer;
+    }
+
+    public void setIsVisible(boolean isVisible) {
+        this.isVisible = isVisible;
+    }
+    
+    public void nascondiTalpa(){
+        this.setIsVisible(false);       
+    }
+    
+    public void compariTalpa(){
+        this.setIsVisible(true);
+    }
 }

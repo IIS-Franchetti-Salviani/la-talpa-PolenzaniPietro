@@ -14,7 +14,7 @@ import java.util.Timer;
 public class Manager {
     private Timer gameTime;
     private int score;
-    Difficulty diff;
+    private Difficulty diff;
     
     private Talpa talpa;
     private ArrayList<Buca> buche;

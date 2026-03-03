@@ -17,23 +17,35 @@ direction TB
 	    +scompari()
     }
 
+    class Difficolta {
+	    facile
+	    difficile
+	    arcade
+    }
+
+    class Form {
+	    +Form()
+    }
+
     class Gestore {
 	    -int punteggio
+	    -Difficolta difficolta
 	    -int tempo
 	    +avviaGioco()
 	    +terminaGioco()
-	    +colpisciBuca()
 	    +aumentaPunteggio()
     }
 
-    class Interfaccia {
+    class Giocatore {
+	    +colpisci(Talpa talpa)
     }
 
-    class Giocatore {
-	    +colpisciBuca()
-    }
+	<<enum>> Difficolta
+
+	note for Difficolta "arcade non utilizza il tempo"
 
     Gestore "1" --o "1...n" Buca
-    Gestore --o Talpa
-    Gestore -- Interfaccia
-    Gestore -- Giocatore
+    Gestore "1" --o "1...n" Talpa
+    Gestore o-- Giocatore
+    Gestore ..> Difficolta
+    Form -- Gestore
