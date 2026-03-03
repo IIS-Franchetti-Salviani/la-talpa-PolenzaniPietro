@@ -8,6 +8,8 @@ package gioco_talpa;
  *
  * @author polenzani.pietro
  */
-public class Buca {
-    private boolean isFree;
+public enum Difficulty {
+    easy,
+    hard,
+    arcade;
 }

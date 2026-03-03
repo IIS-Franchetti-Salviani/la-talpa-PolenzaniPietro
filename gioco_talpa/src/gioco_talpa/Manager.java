@@ -4,10 +4,19 @@
  */
 package gioco_talpa;
 
+import java.util.ArrayList;
+import java.util.Timer;
+
 /**
  *
  * @author polenzani.pietro
  */
 public class Manager {
+    private Timer gameTime;
+    private int score;
+    Difficulty diff;
     
+    private Talpa talpa;
+    private ArrayList<Buca> buche;
+    private Giocatore player;
 }

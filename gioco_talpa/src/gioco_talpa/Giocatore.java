@@ -10,4 +10,7 @@ package gioco_talpa;
  */
 public class Giocatore {
     
+    public void colpisciTalpa(Talpa talpa){
+        
+    }
 }

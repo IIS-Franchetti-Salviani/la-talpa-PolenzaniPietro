@@ -4,10 +4,14 @@
  */
 package gioco_talpa;
 
+import java.util.Timer;
+
 /**
  *
  * @author polenzani.pietro
  */
 public class Talpa {
-    
+    private boolean isVisible;
+    private int value;
+    private Timer timer;
 }
