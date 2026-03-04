@@ -5,6 +5,8 @@
 package gioco_talpa;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
@@ -15,21 +17,22 @@ public class Form extends javax.swing.JFrame {
     /**
      * Creates new form Form
      */
-    
-    
+    Manager m;
+    private JButton[] buttons;
+    private ImageIcon moleImage;
+     
     public Form() {
         initComponents();
         this.setSize(800, 600);
         this.getContentPane().setBackground(new Color(34, 139, 34));
-        jButton1.setBackground(Color.black);
-        jButton2.setBackground(Color.black);
-        jButton3.setBackground(Color.black);
-        jButton4.setBackground(Color.black);
-        jButton5.setBackground(Color.black);
-        jButton6.setBackground(Color.black);
-        jButton7.setBackground(Color.black);
-        jButton8.setBackground(Color.black);
-        Talpa talpa = new Talpa(true, 0 , 0);
+        m = new Manager();
+        moleImage = new ImageIcon(getClass().getResource("immagineTalpa.png"));
+        buttons = new JButton[]{ jButton1 ,jButton2,jButton3,jButton4,jButton5,jButton6,jButton7,jButton8,jButton9};
+        
+        for(JButton jb : buttons){
+            jb.setBackground(Color.black);
+        }
+        
         
     }
         
@@ -50,6 +53,7 @@ public class Form extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -81,9 +85,8 @@ public class Form extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 110, 90));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 100, 90));
 
-        jButton5.setActionCommand("");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -112,40 +115,51 @@ public class Form extends javax.swing.JFrame {
         });
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 110, 90));
 
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 110, 100));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jButton1.setBackground(Color.green);
+        m.spawnTalpa();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       jButton2.setBackground(Color.green);
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jButton3.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jButton6.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jButton5.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jButton4.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        jButton7.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jButton8.setBackground(Color.green);
+        
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,5 +205,6 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }

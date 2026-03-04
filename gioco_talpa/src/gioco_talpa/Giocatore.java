@@ -9,8 +9,13 @@ package gioco_talpa;
  * @author polenzani.pietro
  */
 public class Giocatore {
-    
+    private String name;
+    private int points;
     public void colpisciTalpa(Talpa talpa){
         
+    }
+    
+    public void addPoints(int p){
+        this.points+=p;
     }
 }

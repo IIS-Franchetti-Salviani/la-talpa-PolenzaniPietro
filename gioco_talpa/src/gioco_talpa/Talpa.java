@@ -10,8 +10,9 @@ import java.util.Timer;
  *
  * @author polenzani.pietro
  */
-public class Talpa {
+public class Talpa extends Thread{
     private boolean isVisible;
+    private boolean colpita;
     private int value;
     private int timer;
 
@@ -20,7 +21,7 @@ public class Talpa {
         this.value = value;
         this.timer = timer;
     }
-
+    
     public void setIsVisible(boolean isVisible) {
         this.isVisible = isVisible;
     }
@@ -32,4 +33,32 @@ public class Talpa {
     public void compariTalpa(){
         this.setIsVisible(true);
     }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+    public void escape(){
+        if(!colpita){
+            this.setIsVisible(false);
+        }
+    }
+
+    public boolean isColpita() {
+        return colpita;
+    }
+
+    public void setColpita(boolean colpita) {
+        this.colpita = colpita;
+    }
+    public void colpita(){
+        if(!colpita){
+            this.setColpita(true);
+            this.setIsVisible(false);
+        }
+    }
+    
 }

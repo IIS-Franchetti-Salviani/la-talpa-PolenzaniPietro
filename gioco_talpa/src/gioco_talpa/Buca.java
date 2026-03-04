@@ -10,4 +10,16 @@ package gioco_talpa;
  */
 public class Buca {
     private boolean isFree;
+    public Buca(){
+        this.isFree=true;
+    }
+
+    public boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(boolean isFree) {
+        this.isFree = isFree;
+    }
+    
 }
