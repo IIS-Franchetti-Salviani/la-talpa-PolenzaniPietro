@@ -50,7 +50,7 @@ public class Manager {
     }
     
     public boolean isGameOver() {
-        return player.getPoints() >= 100;
+        return player.getPoints() >= 150;
     }
 
 }

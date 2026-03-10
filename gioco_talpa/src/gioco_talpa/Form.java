@@ -56,7 +56,7 @@ public class Form extends javax.swing.JFrame {
         while(true){
             try{
                 if(m.isGameOver()){
-                    javax.swing.JOptionPane.showMessageDialog(this, "VITTORIA!!!\nHai raggiunto 100 punti!", "fine partita", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "VITTORIA!!!\nHai schiacciato tutte le talpe!!", "fine partita", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                     for(JButton b : buttons){
                         b.setEnabled(false);
                     }
@@ -64,7 +64,7 @@ public class Form extends javax.swing.JFrame {
                 }
                 m.spawnTalpa();
                 aggiornaTalpa();
-                Thread.sleep(800);
+                Thread.sleep(random.nextInt(200, 800));
                 
             } catch(Exception e){
                 e.printStackTrace();
