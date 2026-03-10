@@ -43,7 +43,7 @@ public class Talpa extends Thread{
     }
     public void escape(){
         if(!colpita){
-            this.setIsVisible(false);
+            this.nascondiTalpa();
         }
     }
 

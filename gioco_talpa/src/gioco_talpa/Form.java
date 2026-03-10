@@ -5,6 +5,7 @@
 package gioco_talpa;
 
 import java.awt.Color;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -18,24 +19,31 @@ public class Form extends javax.swing.JFrame {
      * Creates new form Form
      */
     Manager m;
+    Random random = new Random();
     private JButton[] buttons;
     private ImageIcon moleImage;
      
     public Form() {
         initComponents();
+        
         this.setSize(800, 600);
         this.getContentPane().setBackground(new Color(34, 139, 34));
         m = new Manager();
-        moleImage = new ImageIcon(getClass().getResource("immagineTalpa.png"));
+        
+        moleImage = new ImageIcon("immagineTalpa/immagineTalpa.png");
         buttons = new JButton[]{ jButton1 ,jButton2,jButton3,jButton4,jButton5,jButton6,jButton7,jButton8,jButton9};
         
         for(JButton jb : buttons){
             jb.setBackground(Color.black);
         }
         
+        m.cicloTalpa();
+        buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
         
     }
-        
+      public void inserisciImmagine(){ 
+      
+        }  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,7 +64,6 @@ public class Form extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,69 +71,69 @@ public class Form extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, 90));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 100, 70));
 
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 110, 90));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 100, 70));
 
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 110, 90));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 100, 70));
 
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 100, 90));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 90, 70));
 
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 110, 90));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 100, 70));
 
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 110, 90));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 100, 70));
 
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 110, 90));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 100, 70));
 
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 110, 90));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 100, 70));
 
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 110, 100));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 100, 80));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        m.spawnTalpa();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
