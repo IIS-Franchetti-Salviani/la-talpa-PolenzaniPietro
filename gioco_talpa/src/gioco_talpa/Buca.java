@@ -4,22 +4,19 @@
  */
 package gioco_talpa;
 
-/**
- *
- * @author polenzani.pietro
- */
+
 public class Buca {
     private boolean isFree;
-    public Buca(){
-        this.isFree=true;
+    
+    public Buca() {
+        this.isFree = true; 
     }
-
+    
+    
     public boolean getIsFree() {
         return isFree;
     }
-
     public void setIsFree(boolean isFree) {
         this.isFree = isFree;
     }
-    
 }

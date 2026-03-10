@@ -24,30 +24,43 @@ public class Form extends javax.swing.JFrame {
     private ImageIcon moleImage;
      
     public Form() {
-        initComponents();
+    initComponents();
         
-        this.setSize(800, 600);
-        this.getContentPane().setBackground(new Color(34, 139, 34));
-        m = new Manager();
-        
-        moleImage = new ImageIcon("immagineTalpa/immagineTalpa.png");
-        buttons = new JButton[]{ jButton1 ,jButton2,jButton3,jButton4,jButton5,jButton6,jButton7,jButton8,jButton9};
-        
-        for(JButton jb : buttons){
-            jb.setBackground(Color.black);
-        }
-        
-        m.cicloTalpa();
-        /*
-        if(m.spawnTalpa()){
-            buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
-        }
-        */
+    this.getContentPane().setBackground(new Color(34, 139, 34));
+    m = new Manager();
+    moleImage = new ImageIcon("immagineTalpa/immagineTalpa.png");
+    buttons = new JButton[]{jButton1,jButton2,jButton3,jButton4,jButton5,jButton6,jButton7,jButton8,jButton9
+    };
+
+    for(JButton jb : buttons){
+        jb.setBackground(Color.BLACK);
+    }
+
+    startGame();
         
     }
-      public void inserisciImmagine(){ 
-          buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
-        }  
+    private void aggiornaTalpa() {
+    for(JButton b : buttons){
+        b.setIcon(null);
+    }
+
+    int pos = m.getBucaAttiva();
+    if(pos != -1){
+        buttons[pos].setIcon(moleImage);
+         }
+    }   
+    private void startGame() {
+    new Thread(() -> {
+        while(true){
+            try{
+                m.spawnTalpa();
+                aggiornaTalpa();
+                Thread.sleep(1200); 
+            }catch(Exception e){}
+        }
+    }).start();
+}
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -137,11 +150,13 @@ public class Form extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+     m.checkMole(0);
+     this.aggiornaTalpa();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+      m.checkMole(1);
+      this.aggiornaTalpa();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
