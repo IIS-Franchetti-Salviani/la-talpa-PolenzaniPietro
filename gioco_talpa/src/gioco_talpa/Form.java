@@ -64,7 +64,7 @@ public class Form extends javax.swing.JFrame {
                 }
                 m.spawnTalpa();
                 aggiornaTalpa();
-                Thread.sleep(1200);
+                Thread.sleep(800);
                 
             } catch(Exception e){
                 e.printStackTrace();
