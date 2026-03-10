@@ -9,6 +9,7 @@ public class Manager {
     private Talpa talpa;
     private Buca[] buche;
     private Giocatore player;
+    private Difficulty diff;
 
     public Manager() {
         rnd = new Random();
@@ -46,6 +47,10 @@ public class Manager {
     }
     public int getScore() {
         return player.getPoints();
+    }
+    
+    public boolean isGameOver() {
+        return player.getPoints() >= 100;
     }
 
 }

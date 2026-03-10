@@ -11,5 +11,4 @@ package gioco_talpa;
 public enum Difficulty {
     easy,
     hard,
-    arcade;
 }

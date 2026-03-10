@@ -47,16 +47,28 @@ public class Form extends javax.swing.JFrame {
     int pos = m.getBucaAttiva();
     if(pos != -1){
         buttons[pos].setIcon(moleImage);
-         }
-    }   
+    }
+
+    lbl_punti.setText(String.valueOf(m.getScore()));
+}
     private void startGame() {
     new Thread(() -> {
         while(true){
             try{
+                if(m.isGameOver()){
+                    javax.swing.JOptionPane.showMessageDialog(this, "VITTORIA!!!\nHai raggiunto 100 punti!", "fine partita", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    for(JButton b : buttons){
+                        b.setEnabled(false);
+                    }
+                    break;
+                }
                 m.spawnTalpa();
                 aggiornaTalpa();
-                Thread.sleep(1200); 
-            }catch(Exception e){}
+                Thread.sleep(1200);
+                
+            } catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }).start();
 }
@@ -79,6 +91,9 @@ public class Form extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lbl_punti = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,6 +160,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 100, 80));
+
+        jLabel1.setText("punteggio");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, -1, -1));
+
+        lbl_punti.setText("0");
+        getContentPane().add(lbl_punti, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -239,5 +261,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbl_punti;
     // End of variables declaration//GEN-END:variables
 }
