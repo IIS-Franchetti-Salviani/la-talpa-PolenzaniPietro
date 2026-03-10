@@ -42,7 +42,7 @@ public class Form extends javax.swing.JFrame {
         
     }
       public void inserisciImmagine(){ 
-      
+          buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
         }  
     /**
      * This method is called from within the constructor to initialize the form.
