@@ -38,7 +38,11 @@ public class Form extends javax.swing.JFrame {
         }
         
         m.cicloTalpa();
-        buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
+        /*
+        if(m.spawnTalpa()){
+            buttons[random.nextInt(buttons.length-1)].setIcon(moleImage);
+        }
+        */
         
     }
       public void inserisciImmagine(){ 
